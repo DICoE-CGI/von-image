@@ -124,7 +124,7 @@ VERSIONS = {
     },
 }
 
-DEFAULT_NAME = "bcgovimages/von-image"
+DEFAULT_NAME = "ditiacr001.azurecr.io/von-image"
 PY_36_VERSION = "3.6.13"
 PY_37_VERSION = "3.7.10"
 PY_38_VERSION = "3.8.8"
