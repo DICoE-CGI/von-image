@@ -128,30 +128,28 @@ WORKDIR $HOME
 RUN rm -rf indy-shared-rs
 
 
-#ARG aries_askar_url=https://codeload.github.com/andrewwhitehead/aries-askar/tar.gz/0da224cccfcd20e074b3aa655bddaef86d95d988
+ARG aries_askar_url=https://codeload.github.com/andrewwhitehead/aries-askar/tar.gz/0da224cccfcd20e074b3aa655bddaef86d95d988
 
 # Download and extract aries-askar
-#RUN mkdir aries-askar && \
-#    curl "${aries_askar_url}" | tar -xz -C aries-askar
+RUN mkdir aries-askar && \
+    curl "${aries_askar_url}" | tar -xz -C aries-askar
 
 # Build and install aries-askar
-#WORKDIR $HOME/aries-askar
-#RUN cd aries-askar* && \
-#    cargo build ${indy_build_flags} && \
-#    cp target/*/libaries_askar.so "$HOME/.local/lib" && \
-#    cp target/*/libaries_askar.so wrappers/python/aries_askar && \
-#    cargo clean
+WORKDIR $HOME/aries-askar
+RUN cd aries-askar* && \
+    cargo build ${indy_build_flags} && \
+    cp target/*/libaries_askar.so "$HOME/.local/lib" && \
+    cp target/*/libaries_askar.so wrappers/python/aries_askar && \
+    cargo clean
 
 # Package and install aries_askar python wrapper
-#RUN tar czvf aries_askar.tgz -C aries-askar*/wrappers/python . && \
-#    pip install --no-cache-dir --user aries_askar.tgz && \
-#    rm aries_askar.tgz
+RUN tar czvf aries_askar.tgz -C aries-askar*/wrappers/python . && \
+    pip install --no-cache-dir --user aries_askar.tgz && \
+    rm aries_askar.tgz
 
 # Clean up aries-askar
-#WORKDIR $HOME
-#RUN rm -rf aries-askar
-
-
+WORKDIR $HOME
+RUN rm -rf aries-askar
 
 # Install indy python libraries and other dependencies
 ADD requirements.txt .
