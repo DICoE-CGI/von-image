@@ -127,7 +127,7 @@ FROM ubuntu:18.04
 
 ARG uid=1001
 ARG user=indy
-ARG python_version=3.5.5
+ARG python_version=3.6.8
 ARG tag_name=von-image
 ARG tag_version=1.16.0
 
