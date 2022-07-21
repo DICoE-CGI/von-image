@@ -84,7 +84,7 @@ RUN curl -o rustup https://sh.rustup.rs && \
     rm -rf .cargo .multirust .profile .rustup rustup indy-sdk indy-crypto
 
 # 3.5.3+ required
-ARG python_version=3.5.5
+ARG python_version=3.6.13
 
 # Install pyenv and python to user home directory
 ENV PYENV_ROOT="$HOME/.pyenv"
@@ -110,9 +110,9 @@ FROM ubuntu:16.04
 
 ARG uid=1001
 ARG user=indy
-ARG python_version=3.5.5
+ARG python_version=3.6.13
 ARG tag_name=von-image
-ARG tag_version=0.16.0
+ARG tag_version=1.16.0
 
 ENV HOME="/home/$user" \
     APP_ROOT="$HOME" \
