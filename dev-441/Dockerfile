@@ -105,7 +105,7 @@ ADD requirements.txt .
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 # start fresh
-FROM ubuntu:latest
+FROM ubuntu:16.04
 
 
 ARG uid=1001
