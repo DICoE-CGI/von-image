@@ -214,7 +214,7 @@ target = ver.get("path", args.version)
 if target.startswith("next"):
     dockerfile = target + "/Dockerfile"
 else:
-    dockerfile = target + "/Dockerfile"
+    dockerfile = target + "/Dockerfile.ubuntu"
 if args.file:
     dockerfile = args.file
 
