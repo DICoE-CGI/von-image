@@ -62,9 +62,9 @@ RUN git clone https://github.com/facebook/rocksdb.git && \
 ARG indy_build_flags=
 
 ARG indy_sdk_repo=https://github.com/bcgov/indy-sdk.git
-ARG indy_sdk_rev=574ca3a881d188c3fd7400d27acbe5edc4c7f666
+ARG indy_sdk_rev=b4b330ef326958d593ab42e25679c2dcd655494c
 ARG indy_crypto_repo=https://github.com/hyperledger/indy-crypto.git
-ARG indy_crypto_rev=96c79b36c5056eade5a8e3bae418f5a733cc8d8d
+ARG indy_crypto_rev=9fbbb7939440b67e92f2698e868f14c2432cce72
 
 # Install rust toolchain and indy-sdk
 RUN curl -o rustup https://sh.rustup.rs && \
