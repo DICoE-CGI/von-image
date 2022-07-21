@@ -46,7 +46,7 @@ RUN curl -o libsodium-${nacl_lib_ver}.tar.gz \
     rm -rf libsodium-${nacl_lib_ver}*
 
 # 3.5.3+ required
-ARG python_version=3.6.8
+ARG python_version=3.6.13
 
 # Install pyenv and python to user home directory
 ENV PYENV_ROOT="$HOME/.pyenv"
@@ -127,7 +127,7 @@ FROM ubuntu:18.04
 
 ARG uid=1001
 ARG user=indy
-ARG python_version=3.6.8
+ARG python_version=3.6.13
 ARG tag_name=von-image
 ARG tag_version=1.16.0
 
