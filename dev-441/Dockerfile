@@ -1,4 +1,4 @@
-FROM ubuntu:16.04 as builder
+FROM ubuntu:18.04 as builder
 
 ARG user=indy
 ENV HOME="/home/$user"
@@ -105,7 +105,7 @@ ADD requirements.txt .
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 # start fresh
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 
 ARG uid=1001
