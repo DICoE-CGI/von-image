@@ -65,7 +65,7 @@ RUN git clone https://github.com/pyenv/pyenv.git "$PYENV_ROOT" && \
 # set to --release for smaller, optimized library
 ARG indy_build_flags=--release
 
-ARG indy_sdk_url=https://codeload.github.com/bcgov/indy-sdk/tar.gz/b4b330ef326958d593ab42e25679c2dcd655494c
+ARG indy_sdk_url=https://codeload.github.com/bcgov/indy-sdk/tar.gz/574ca3a881d188c3fd7400d27acbe5edc4c7f666
 
 ARG rust_version=1.34.0
 
