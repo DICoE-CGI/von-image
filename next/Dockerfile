@@ -37,7 +37,7 @@ RUN apt-get update -y && \
 ARG indy_build_flags=--release
 
 # overridden by the build script
-ARG indy_sdk_url=https://codeload.github.com/bcgov/indy-sdk/tar.gz/574ca3a881d188c3fd7400d27acbe5edc4c7f666
+ARG indy_sdk_url=https://codeload.github.com/hyperledger/indy-sdk/tar.gz/f85afd2f94959eb59522e5dda160d2c7fdd1a4ba
 
 # make local libs and binaries accessible
 ENV PATH="$HOME/.local/bin:$PATH"
@@ -163,7 +163,7 @@ FROM debian:buster-slim
 ARG uid=1001
 ARG user=indy
 ARG tag_name=von-image
-ARG tag_version=
+ARG tag_version=next-2
 
 ENV HOME="/home/$user" \
     APP_ROOT="$HOME" \
