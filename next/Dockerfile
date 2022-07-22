@@ -134,18 +134,18 @@ ARG aries_askar_url=https://codeload.github.com/hyperledger/aries-askar/tar.gz/0
 RUN mkdir aries-askar && \
     curl "${aries_askar_url}" | tar -xz -C aries-askar
 
-## Build and install aries-askar
-#WORKDIR $HOME/aries-askar
-#RUN cd aries-askar* && \
-#    cargo build ${indy_build_flags} && \
-#    cp target/*/libaries_askar.so "$HOME/.local/lib" && \
-#    cp target/*/libaries_askar.so wrappers/python/aries_askar && \
-#    cargo clean
+# Build and install aries-askar
+WORKDIR $HOME/aries-askar
+RUN cd aries-askar* && \
+    cargo build ${indy_build_flags} && \
+    cp target/*/libaries_askar.so "$HOME/.local/lib" && \
+    cp target/*/libaries_askar.so wrappers/python/aries_askar && \
+    cargo clean
 
-## Package and install aries_askar python wrapper
-#RUN tar czvf aries_askar.tgz -C aries-askar*/wrappers/python . && \
-#    pip install --no-cache-dir --user aries_askar.tgz && \
-#    rm aries_askar.tgz
+# Package and install aries_askar python wrapper
+RUN tar czvf aries_askar.tgz -C aries-askar*/wrappers/python . && \
+    pip install --no-cache-dir --user aries_askar.tgz && \
+    rm aries_askar.tgz
 
 # Clean up aries-askar
 WORKDIR $HOME
