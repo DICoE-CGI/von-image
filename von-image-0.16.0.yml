@@ -25,7 +25,7 @@ stages:
         containerRegistry: 'ACRConnection_DITI'
         repository: 'von-image'
         command: 'build'
-        Dockerfile: '1.10/Dockerfile'
+        Dockerfile: '**/Dockerfile'
         tags: 'py36-1.16-0'
         addBaseImageData: false
   
