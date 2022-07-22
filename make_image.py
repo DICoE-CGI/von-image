@@ -305,7 +305,7 @@ else:
     )
     size = int(proc_sz.stdout.decode("ascii").strip()) / 1024.0 / 1024.0
     print("%0.2f%s" % (size, "MB"))
-
+print("CMD ".join(cmd))
 if args.s2i:
     s2i_tag = tag + "-s2i"
     s2i_cmd = [
