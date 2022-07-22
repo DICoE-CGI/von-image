@@ -231,7 +231,7 @@ else:
     if args.debug:
         tag_version += "-debug"
     tag = tag_name + ":" + tag_version
-
+print(tag_version)
 build_args = {}
 build_args.update(ver["args"])
 build_args["python_version"] = py_ver
