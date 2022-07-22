@@ -142,10 +142,10 @@ RUN mkdir aries-askar && \
 #    cp target/*/libaries_askar.so wrappers/python/aries_askar && \
 #    cargo clean
 
-# Package and install aries_askar python wrapper
-RUN tar czvf aries_askar.tgz -C aries-askar*/wrappers/python . && \
-    pip install --no-cache-dir --user aries_askar.tgz && \
-    rm aries_askar.tgz
+## Package and install aries_askar python wrapper
+#RUN tar czvf aries_askar.tgz -C aries-askar*/wrappers/python . && \
+#    pip install --no-cache-dir --user aries_askar.tgz && \
+#    rm aries_askar.tgz
 
 # Clean up aries-askar
 WORKDIR $HOME
