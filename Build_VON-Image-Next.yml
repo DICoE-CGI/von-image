@@ -1,0 +1,39 @@
+# Docker
+# Build a Docker image
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+- main
+
+resources:
+- repo: self
+
+variables:
+  ImageName: 'ditiacr001.azurecr.io/von-image:$(version)'
+
+stages:
+- stage: Build
+  displayName: Build image
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: Docker@2
+      displayName: 'Build an image'
+      inputs:
+        containerRegistry: 'ACRConnection_DITI'
+        repository: 'von-image'
+        command: 'build'
+        Dockerfile: '**/Dockerfile'
+        tags: 'next-2'
+        addBaseImageData: false
+  
+    - task: Docker@2
+      displayName: 'Push the Docker Image to ACR'
+      inputs:
+        containerRegistry: 'ACRConnection_DITI'
+        repository: 'von-image'
+        command: 'push'
+        tags: 'next-2'
