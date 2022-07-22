@@ -26,7 +26,7 @@ stages:
         containerRegistry: 'ACRConnection_DITI'
         repository: 'von-image'
         command: 'build'
-        Dockerfile: '**/Dockerfile'
+        Dockerfile: 'next/Dockerfile'
         tags: 'next-2'
         addBaseImageData: false
   
