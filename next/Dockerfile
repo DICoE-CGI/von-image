@@ -128,7 +128,8 @@ WORKDIR $HOME
 RUN rm -rf indy-shared-rs
 
 
-ARG aries_askar_url=https://codeload.github.com/hyperledger/aries-askar/tar.gz/0da224cccfcd20e074b3aa655bddaef86d95d988
+ARG aries_askar_url=https://codeload.github.com/hyperledger/aries-askar/tar.gz/ceb294006fc76c9e7976bd2005e0d6c740c21afe
+
 
 # Download and extract aries-askar
 RUN mkdir aries-askar && \
