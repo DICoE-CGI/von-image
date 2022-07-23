@@ -1,4 +1,4 @@
-FROM rust:1.45-slim-buster as builder
+FROM rust:slim-buster as builder
 
 ARG user=indy
 ENV HOME="/home/$user"
@@ -78,7 +78,7 @@ WORKDIR $HOME
 RUN rm -rf indy-sdk
 
 
-ARG indy_vdr_url=https://codeload.github.com/andrewwhitehead/indy-vdr/tar.gz/aedd57ed5ca6c27c78bab946dbb7843048be750f
+ARG indy_vdr_url=https://codeload.github.com/hyperledger/indy-vdr/tar.gz/9eea7acea040ec52796e3fd0a5886427c858fa98
 
 # Download and extract indy-vdr
 RUN mkdir indy-vdr && \
@@ -104,7 +104,7 @@ WORKDIR $HOME
 RUN rm -rf indy-vdr
 
 
-ARG indy_shared_url=https://codeload.github.com/bcgov/indy-shared-rs/tar.gz/7a8e49848a08bbda29e128b1913cc757076529b1
+ARG indy_shared_url=https://codeload.github.com/hyperledger/indy-shared-rs/tar.gz/68a495d53211882feb10fc55875e9c0e8921958a
 
 # Download and extract indy-credx
 RUN mkdir indy-shared-rs && \
@@ -128,7 +128,7 @@ WORKDIR $HOME
 RUN rm -rf indy-shared-rs
 
 
-ARG aries_askar_url=https://codeload.github.com/andrewwhitehead/aries-askar/tar.gz/0da224cccfcd20e074b3aa655bddaef86d95d988
+ARG aries_askar_url=https://codeload.github.com/hyperledger/aries-askar/tar.gz/ceb294006fc76c9e7976bd2005e0d6c740c21afe
 
 
 # Download and extract aries-askar
