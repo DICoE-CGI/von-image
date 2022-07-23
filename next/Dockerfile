@@ -78,7 +78,7 @@ WORKDIR $HOME
 RUN rm -rf indy-sdk
 
 
-ARG indy_vdr_url=https://codeload.github.com/hyperledger/indy-vdr/tar.gz/9eea7acea040ec52796e3fd0a5886427c858fa98
+ARG indy_vdr_url=https://codeload.github.com/hyperledger/indy-vdr/tar.gz/07f03c4609ceed34bc163f83160c609562c34997
 
 # Download and extract indy-vdr
 RUN mkdir indy-vdr && \
