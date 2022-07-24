@@ -1,4 +1,4 @@
-FROM rust:slim-buster as builder
+FROM rust:1.45-slim-buster as builder
 
 ARG user=indy
 ENV HOME="/home/$user"
